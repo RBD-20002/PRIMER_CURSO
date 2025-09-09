@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alumnos universidad="Universidad de Victoria" numTitulos="6" numCreditos="1630" numAlumnos="4">
+  <alumno codigoAlumno="e01" codigoGrado="c01" numeroAsignaturas="22"/>
+  <alumno codigoAlumno="e02" codigoGrado="c01" numeroAsignaturas="22"/>
+  <alumno codigoAlumno="e03" codigoGrado="c01" numeroAsignaturas="22"/>
+  <alumno codigoAlumno="e04" codigoGrado="c01" numeroAsignaturas="22"/>
+</alumnos>

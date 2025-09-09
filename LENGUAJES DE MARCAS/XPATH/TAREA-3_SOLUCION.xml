@@ -1,0 +1,151 @@
+﻿| //disco[@tecnoloxía="SCSI"] | 
+/*Para sacar los discos con tecnologia SCSI*/
+| //disco[@tecnoloxía="SCSI"]/../../@nome | 
+/*para sacar los nombres de las maquinas con esa tecnologia*/
+| count(//disco[@tecnoloxía="SCSI"] | 
+/*Para contar cuantas maquinas tienen la tecnologia*/
+<disco tecnoloxía="SCSI" capacidade="500"/>
+<disco tecnoloxía="SCSI" capacidade="500"/>
+<disco tecnoloxía="SCSI" capacidade="200"/>
+<disco tecnoloxía="SCSI" capacidade="200"/>
+<disco tecnoloxía="SCSI" capacidade="200"/>
+
+
+| //disco[IP="192.168.10.45"]/OS | /*Para sacar el SO con esa IP*/
+| //IP[.="192.168.10.45"]/../OS | /*Para sacar el SO con esa IP*/
+<OS>Mandriva 2007</OS>
+
+
+| //procesador[@marca="AMD"]/@* | 
+/*Para sacar todos los atributos del procesador que sea de marca AMD */
+ marca="AMD"
+ velocidade="1.4"
+
+
+| //máquina[@nome="COPERNICO"]/config/*/text() | 
+/*Para sacar en texto todo lo que figura en la configuracion de COPERNICO*/
+Servidor de dominio
+Windows 2003 Server R2
+192.168.20.11
+192.168.20.1
+
+
+| //máquina[hardware/tipo="Semitorre"][/config/OS="Windows XP"] | 
+/*Para sacar las maquinas que sean SemiTorre y que a la vez con SO "Windows XP"
+| //máquina[hardware/tipo="Semitorre" and config/OS="Windows XP"]
+<máquina nome="PC053">
+  <hardware>
+    <tipo>Semitorre</tipo>
+    <memoria>0.5</memoria>
+    <disco capacidade="40"/>
+    <lectora tipo="CD"/>
+  </hardware>
+  <config>
+    <OS>Windows XP</OS>
+  </config>
+</máquina>
+<máquina nome="PC007">
+  <hardware>
+    <tipo>Semitorre</tipo>
+    <memoria tecnoloxía="DDR">0.5</memoria>
+    <disco capacidade="40"/>
+    <lectora tipo="CD"/>
+  </hardware>
+  <config>
+    <OS>Windows XP</OS>
+  </config>
+  <notas>Sin tarxeta de rede</notas>
+</máquina>
+
+
+| //hardware[memoria/@tecnoloxía="DDR2" and memoria="4"]/fabricante | 
+/*Para sacar el fabricante de la maquina que tenga tecnologia DDR2 y tenga de memoria 4 
+<fabricante>HP</fabricante>
+<fabricante>HP</fabricante>
+
+
+| //máquina[hardware/procesador/@num_nucleos]/config/OS | /*Para sacar los SO que figuran con numero de nucleos
+| //máquina[hardware/procesador/@num_nucleos]/@nome | /*Para sacar los nombre de las PC con numero de nucleos
+<OS>Windows 7</OS>
+<OS>Windows 2003 Server R2</OS>
+<OS>Windows 2008 Server R2</OS>
+<OS>Ubuntu 8.04 Server</OS>
+<OS>Ubuntu 8.04 Server</OS>
+
+
+| //máquina[hardware/memoria/@tecnoloxía="DDR2"]/@nome | 
+/*Para sacar los nombres de la maquinas con DDR2
+ nome="GALILEO"
+ nome="KEPLER"
+ nome="NEWTON"
+
+
+| //máquina[hardware/procesador/@marca="Intel"][hardware/gravadora/@tipo="DVD"] |
+/*Para sacar las maquinas que tengan intel y gravadora DVD
+<máquina nome="PC017">
+  <hardware>
+    <tipo>PC Sobremesa</tipo>
+    <fabricante>Dell</fabricante>
+    <procesador marca="Intel" num_nucleos="4" velocidade="3.1">i7</procesador>
+    <memoria tecnoloxía="DDR3">8</memoria>
+    <disco tecnoloxía="SATA" capacidade="2000"/>
+    <gravadora tipo="DVD"/>
+  </hardware>
+  <config>
+    <OS>Windows 7</OS>
+    <IP>192.168.20.105</IP>
+    <gateway>192.168.20.1</gateway>
+  </config>
+</máquina>
+<máquina nome="COPERNICO">
+  <hardware>
+    <tipo>Torre</tipo>
+    <fabricante>Fujitsu-Siemens</fabricante>
+    <procesador marca="Intel" num_nucleos="4" velocidade="3">Xeon</procesador>
+    <memoria tecnoloxía="DDR">2</memoria>
+    <disco tecnoloxía="SCSI" capacidade="500"/>
+    <disco tecnoloxía="SCSI" capacidade="500"/>
+    <gravadora tipo="DVD"/>
+  </hardware>
+  <config>
+    <role>Servidor de dominio</role>
+    <OS>Windows 2003 Server R2</OS>
+    <IP>192.168.20.11</IP>
+    <gateway>192.168.20.1</gateway>
+  </config>
+</máquina>
+<máquina nome="KEPLER">
+  <hardware>
+    <tipo>Rack</tipo>
+    <fabricante>HP</fabricante>
+    <procesador marca="Intel" num_nucleos="2" velocidade="3">Core2 Duo</procesador>
+    <memoria tecnoloxía="DDR2">4</memoria>
+    <disco tecnoloxía="SATA" capacidade="500"/>
+    <disco tecnoloxía="SATA" capacidade="500"/>
+    <disco tecnoloxía="SATA" capacidade="500"/>
+    <gravadora tipo="DVD"/>
+  </hardware>
+  <config>
+    <role>Servidor de arquivos</role>
+    <OS>Ubuntu 8.04 Server</OS>
+    <IP>192.168.10.10</IP>
+    <gateway>192.168.10.1</gateway>
+  </config>
+</máquina>
+<máquina nome="NEWTON">
+  <hardware>
+    <tipo>Rack</tipo>
+    <fabricante>HP</fabricante>
+    <procesador marca="Intel" num_nucleos="2" velocidade="3">Core2 Duo</procesador>
+    <memoria tecnoloxía="DDR2">4</memoria>
+    <disco tecnoloxía="SATA" capacidade="500"/>
+    <disco tecnoloxía="SATA" capacidade="500"/>
+    <gravadora tipo="DVD"/>
+  </hardware>
+  <config>
+    <role>Servidor web</role>
+    <OS>Ubuntu 8.04 Server</OS>
+    <IP>192.168.10.11</IP>
+    <gateway>192.168.10.1</gateway>
+  </config>
+</máquina>

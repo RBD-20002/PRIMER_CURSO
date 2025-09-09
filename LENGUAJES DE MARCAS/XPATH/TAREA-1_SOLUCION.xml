@@ -1,0 +1,118 @@
+﻿/*Las maquinas que contengan un documento*/
+<máquina nome="PC017">
+  <hardware>
+    <tipo>PC Sobremesa</tipo>
+    <fabricante>Dell</fabricante>
+    <procesador marca="Intel" num_nucleos="4" velocidade="3,1">i7</procesador>
+    <memoria tecnoloxía="DDR3">8</memoria>
+    <disco tecnoloxía="SATA" capacidade="2000"/>
+    <gravadora tipo="DVD"/>
+  </hardware>
+  <config>
+    <OS>Windows 7</OS>
+    <IP>192.168.20.105</IP>
+    <gateway>192.168.20.1</gateway>
+  </config>
+</máquina>
+<máquina nome="GALILEO">
+  <hardware>
+    <tipo>Torre</tipo>
+    <fabricante>Fujitsu-Siemens</fabricante>
+    <procesador marca="Intel" num_nucleos="4" velocidade="3">Xeon</procesador>
+    <memoria tecnoloxía="DDR2">2</memoria>
+    <disco tecnoloxía="SCSI" capacidade="200"/>
+    <disco tecnoloxía="SCSI" capacidade="200"/>
+    <disco tecnoloxía="SCSI" capacidade="200"/>
+    <lectora tipo="DVD"/>
+  </hardware>
+  <config>
+    <role>Servidor de dominio</role>
+    <OS>Windows 2008 Server R2</OS>
+    <IP>192.168.20.10</IP>
+    <gateway>192.168.20.1</gateway>
+  </config>
+</máquina>
+
+
+| //máquina |
+/*La informacion correspendiente a los hardware de las maquinas*/
+<hardware>
+  <tipo>PC Sobremesa</tipo>
+  <fabricante>Dell</fabricante>
+  <procesador marca="Intel" num_nucleos="4" velocidade="3,1">i7</procesador>
+  <memoria tecnoloxía="DDR3">8</memoria>
+  <disco tecnoloxía="SATA" capacidade="2000"/>
+  <gravadora tipo="DVD"/>
+</hardware>
+<hardware>
+  <tipo>Torre</tipo>
+  <fabricante>Fujitsu-Siemens</fabricante>
+  <procesador marca="Intel" num_nucleos="4" velocidade="3">Xeon</procesador>
+  <memoria tecnoloxía="DDR2">2</memoria>
+  <disco tecnoloxía="SCSI" capacidade="200"/>
+  <disco tecnoloxía="SCSI" capacidade="200"/>
+  <disco tecnoloxía="SCSI" capacidade="200"/>
+  <lectora tipo="DVD"/>
+</hardware>
+
+
+| //hardware |
+/*La informacion correspondiente a la configuracion de las maquinas*/
+<config>
+  <OS>Windows 7</OS>
+  <IP>192.168.20.105</IP>
+  <gateway>192.168.20.1</gateway>
+</config>
+<config>
+  <role>Servidor de dominio</role>
+  <OS>Windows 2008 Server R2</OS>
+  <IP>192.168.20.10</IP>
+  <gateway>192.168.20.1</gateway>
+</config>
+
+
+| //fabricante |
+/*La informacion correspondiente a los fabricantes de las maquinas*/
+<fabricante>Dell</fabricante>
+<fabricante>Fujitsu-Siemens</fabricante>
+
+
+| //disco |
+/*La informacion de los discos de las maquinas*/
+<disco tecnoloxía="SATA" capacidade="2000"/>
+<disco tecnoloxía="SCSI" capacidade="200"/>
+<disco tecnoloxía="SCSI" capacidade="200"/>
+<disco tecnoloxía="SCSI" capacidade="200"/>
+
+
+| //IP |
+/*La informacion de las IP de maquinas*/
+<IP>192.168.20.105</IP>
+<IP>192.168.20.10</IP>
+
+
+| Los nombres de la maquinas |
+| /equipos/máquina/@nome |
+| /child::equipos/child::máquina/attribute::nome |
+| /descendant-or-self::máquina/attribute::nome |
+| /descendant::máquina/@nome |
+
+ nome="PC017"
+ nome="GALILEO"
+ 
+ 
+ | La informacion de las maquinas que tengas gravadora optica |
+| //hardware/gravadora/../../@nome |
+| //hardware[gravadora]/../@nome |
+| //hardware/gravadora/ancestor::máquina/@nome |
+
+ nome="PC017"
+
+
+| La informacion del SO en el cual figura un rol |
+| //config[role]/OS |
+| /equipos/máquina/config/role/../OS |
+
+<OS>Windows 2008 Server R2</OS>
+
+

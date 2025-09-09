@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Transformar XSLT con Saxon",
+        "type": "shell",
+        "command": "java",
+        "args": [
+          "-jar",
+          "C:/saxon/saxon-he-12.5.jar",
+          "-s:${file}",
+          "-xsl:${workspaceFolder}/transformacion.xsl",
+          "-o:${workspaceFolder}/salida.html"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        },
+        "problemMatcher": []
+      }
+    ]
+  }

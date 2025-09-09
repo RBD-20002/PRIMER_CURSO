@@ -1,0 +1,7 @@
+Examen LMSGI-ASIR-Distancia (27.03.2025)
+punto;expresión XPath
+a-1; //asignatura[creditos_teoricos != 4]/nombre
+a-2; //alumno[position()=last()]//carrera/@codigo
+a-3; //alumno[sexo="Mujer"]//asignatura/@codigo
+a-4; //alumno[@beca="si"]/nombre | //alumno[@beca="si"]/apellido1 |//alumno[@beca="si"]/apellido2
+a-5; 
