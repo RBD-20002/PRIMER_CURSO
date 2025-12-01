@@ -1,0 +1,5 @@
+[17/05/2025 00:51:10] Login -> USUARIO = Ricardo
+[17/05/2025 00:51:10] Logout -> USUARIO = Jose
+[17/05/2025 00:53:59] Login -> USUARIO = JoseLuis
+[17/05/2025 00:53:59] Logout -> USUARIO = JoseMiguel
+[17/05/2025 00:55:34] Login -> USUARIO = Jacqueline
